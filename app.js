@@ -15,12 +15,11 @@ const app = Vue.createApp({
     },
     toggleFav(book) {
       book.isFav = !book.isFav;
-      
-      // if (book.isFav) {
-      //   book.isFav = false;
-      // } else {
-      //   book.isFav = true;
-      // }
+    }
+  },
+  computed: {
+    filterdBooks() {
+      return this.books.filter((book) => book.isFav)
     }
   }
 })
